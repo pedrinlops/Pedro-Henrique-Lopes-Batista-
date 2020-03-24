@@ -1,0 +1,88 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+
+
+struct vendedor {
+
+int codigoVendedor[20];
+int salario[20];
+int pecas[20];
+char nome[20][20];
+int totalDeVendas=0;
+
+}apontador;
+
+
+int main(){
+
+int quantos=0;
+int contador;
+int pecas=0;
+int somatotal=0;
+
+int i=0;
+
+
+printf("1 - Cadastrar funcionario 2 - FIM \n");
+scanf("%d", &contador);
+system ("cls");
+
+while (contador != 2){
+quantos++;
+
+
+
+printf("Informe os dados do funcionario: \n\n\n");
+
+printf ("Nome:  \n");
+scanf ("%s", &apontador.nome[i]);
+fflush (stdin);
+
+printf ("Codigo vendedor: \n");
+scanf ("%d", &apontador.codigoVendedor[i]);
+fflush (stdin);
+
+printf ("Salario: \n");
+scanf ("%d", &apontador.salario[i]);
+fflush (stdin);
+
+printf("quantidade de pecas feitas pelo funcionario: \n");
+scanf ("%d", &apontador.pecas[i], pecas);
+
+
+
+i++;
+system ("cls");
+
+printf("1 - continuar 2 - para cadastrar o ultimo \n");
+scanf("%d", &contador);
+system ("cls");
+}
+
+
+
+for (i=0; i<quantos; i++){
+printf ("\n\nDADOS DO FUNCIONARIO: \n\n");
+
+printf ("nome: %s\n", apontador.nome[i]);
+printf ("salario: %d\n", apontador.salario[i]);
+printf ("Codigo: %d\n", apontador.codigoVendedor[i]);
+printf ("Quantidade de pecas: %d\n", apontador.pecas[i]);
+}
+
+
+for (i=0; i<quantos; i++)
+{
+apontador.totalDeVendas= apontador.totalDeVendas + apontador.pecas[i];
+}
+
+printf ("\n\nTotal pecas vendidas: %d\n\n", apontador.totalDeVendas);
+
+
+
+
+system ("pause");
+return 0;
+
+}
